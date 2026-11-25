@@ -1,0 +1,19 @@
+# pdf2png-cn 作为 DSH 插件（bundle 层）的插入声明。
+#
+# 当某个 profile 的 package.json 在 `dsh.profile.bundles` 里列出本包时，
+# DSH 会读取这个文件，并把下面这一行插入插件配置树：
+#   - id   profile 自己的 patch 层用来停用的 identifier（如 `- id: pdf2png-cn ... disable`）
+#   - name 必须是已安装的包名（与 package.json 的 name 一致）
+#
+# 这一行挂载 Host 半部：注册模型工具 `pdf2png_convert`，停用/卸载时自动注销。
+# 可选配置（卸载时不会删除已生成的图片）：
+#   workspaceRoot  覆盖会话工作目录（一般不需要）
+#   defaults       工具参数的默认值（键名同工具参数或别名，如 out_dir / out-dir / outDir），例如：
+#     config:
+#       defaults:
+#         dpi: 300
+#         format: jpg
+#         out_dir: ./png
+- insert:
+    - id: pdf2png-cn
+      name: 'pdf2png-cn'

@@ -1,0 +1,13 @@
+node_modules/
+.npmcache/
+.preview/
+test/tmp/
+test/fixtures/*.pdf
+test/fixtures/**/*.png
+out/
+*.log
+.DS_Store
+npm-debug.log*
+
+# 构建产物
+.dist/

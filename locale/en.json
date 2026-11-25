@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "pdf2png",
+    "description": "Render each PDF page to PNG/JPEG images with MuPDF WASM — the same engine as PyMuPDF, no Python needed. In chat, just ask to turn a PDF into images and the model calls the pdf2png_convert tool; it supports DPI, page ranges, JPEG quality, output directories, directory recursion, skipping existing files and encrypted PDFs. Files are named <name>_[01].png, compatible with the classic pdf2png.py, so OCR/vision pipelines can pick them up. Rendering is local and offline; higher DPI uses more memory."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "pdf2png",
+    "description": "把 PDF 逐页渲染成 PNG/JPEG 图片（MuPDF WASM，与 PyMuPDF 同引擎，无需 Python）。在对话里说「把这份 PDF 转成图片」即可调用工具 pdf2png_convert；支持 DPI、页码范围、JPEG 质量、输出目录、目录递归、跳过已存在图片和加密 PDF。输出命名为 <文件名>_[01].png，与经典 pdf2png.py 一致，便于继续做 OCR/视觉理解。渲染全部在本机完成，不联网；DPI 越高越占内存。"
+  }
+}

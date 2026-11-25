@@ -1,0 +1,81 @@
+{
+  "name": "pdf2png-cn",
+  "version": "1.0.0",
+  "description": "PDF → PNG/JPEG 逐页渲染（MuPDF WASM，无需 Python）；同时是 DSH（DeepSeek Harness）插件（工具 pdf2png_convert），提供 pdf2png 命令行",
+  "type": "module",
+  "main": "./lib/dsh-plugin.mjs",
+  "exports": {
+    ".": {
+      "import": "./lib/dsh-plugin.mjs",
+      "require": "./lib/index.cjs"
+    },
+    "./plugin": "./lib/dsh-plugin.mjs",
+    "./core": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
+    },
+    "./cli": "./bin/pdf2png.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "pdf2png": "bin/pdf2png.js"
+  },
+  "scripts": {
+    "test": "node test/run.mjs && node test/plugin.test.mjs",
+    "test:plugin": "node test/plugin.test.mjs",
+    "demo": "node bin/pdf2png.js test/fixtures/sample.pdf --dpi 150"
+  },
+  "engines": {
+    "node": ">=18",
+    "dsh": "^0.2.3-alpha.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitee.com/kumath/pdf2png.git"
+  },
+  "homepage": "https://gitee.com/kumath/pdf2png",
+  "bugs": {
+    "url": "https://gitee.com/kumath/pdf2png/issues"
+  },
+  "keywords": [
+    "pdf",
+    "png",
+    "jpeg",
+    "image",
+    "render",
+    "mupdf",
+    "wasm",
+    "ocr",
+    "cli",
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "plugin"
+  ],
+  "files": [
+    "bin/pdf2png.js",
+    "lib/*.js",
+    "lib/*.mjs",
+    "lib/*.cjs",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs/DETAIL.md",
+    "icon.svg",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "icon": "./icon.svg",
+  "dependencies": {
+    "mupdf": "^1.28.6"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
